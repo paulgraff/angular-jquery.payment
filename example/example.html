@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+  <script src="../lib/jquery.payment.js"></script>
+  <script src="../lib/angular-jquery.payment.js"></script>
+</head>
+<body ng-app="payment">
+    <form>
+        <input type="text" format-card-number restrict-numeric/>
+        <input type="text" format-card-cvc restrict-numeric/>
+        <input type="text" format-card-expiry restrict-numeric/>
+    </form>
+</body>
+</html>
