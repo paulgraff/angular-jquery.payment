@@ -6,11 +6,25 @@
   <script src="../lib/jquery.payment.js"></script>
   <script src="../lib/angular-jquery.payment.js"></script>
 </head>
-<body ng-app="payment">
-    <form>
-        <input type="text" format-card-number restrict-numeric/>
-        <input type="text" format-card-cvc restrict-numeric/>
-        <input type="text" format-card-expiry restrict-numeric/>
+<body ng-app="Payment">
+    <form name="form">
+        <div>
+            <label>Card Number</label>
+            <input type="text" name="number" ng-model="card.number" format-card-number card-number restrict-numeric/>
+        </div>
+        <div>
+            <label>CVC</label>
+            <input type="text" name="cvc" ng-model="card.cvc" format-card-cvc card-cvc restrict-numeric/>
+        </div>
+        <div>
+            <label>Expiry</label>
+            <input type="text" name="expiry" ng-model="card.expiry" format-card-expiry card-expiry restrict-numeric/>
+        </div>
     </form>
+    <ul>
+        <li ng-show="form.number.$error.cardNumber">invalid number</li>
+        <li ng-show="form.cvc.$error.cardCVC">invalid cvc</li>
+        <li ng-show="form.expiry.$error.cardExpiry">invalid expiry</li>
+    </ul>
 </body>
 </html>
